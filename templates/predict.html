@@ -1,0 +1,61 @@
+ <html>
+
+ <style>
+ h1 {
+  width:100%: 
+  float: center;
+  display: block;
+  background-color: #333;
+  color: #f2f2f2;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px; 
+  height:100px;
+}
+
+img {
+   background-color: #ddd;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  
+}
+progress {
+ background-color: #ddd;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  }
+
+progress {
+  text-align: center;
+}
+progress:after {
+  content: {{test}};
+}  
+ 
+ </style>
+
+ <body>
+ 	 {% if prediction == "Negative" %}
+		 
+	     <h1> THIS IS NOT A GENUINE QUESTION   </h1>
+		<img src="https://i.pinimg.com/564x/b0/41/75/b04175fd1ffbefdc02d90136c262a6e3.jpg" alt="this slowpoke moves" width=250>
+	    <progress value= {{test}} max="100">
+	
+
+	
+	  {% else %}
+		<h1> THIS IS A GENUINE QUESTION   </h1>
+		<img src = "https://i.pinimg.com/originals/4d/97/1f/4d971f3171aed1fe52625c893ebdc5f8.jpg" alt = "this slowpoke moves" width = 250>
+		<br>
+		<br>
+		<progress value= {{prob}} max="100">
+	
+	{% endif %}
+ </body>
+ </html>
+ 
+ 
