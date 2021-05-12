@@ -10,6 +10,8 @@ import re
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.stem import WordNetLemmatizer
 import nltk
+nltk.download('wordnet')
+nltk.download('punkt')
   
 
 import flask
