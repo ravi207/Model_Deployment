@@ -2,16 +2,14 @@ from flask import Flask, jsonify, request
 import numpy as np
 from sklearn.externals import joblib
 import pandas as pd
-import numpy as np
 from sklearn import linear_model
 from sklearn.externals import joblib
-from bs4 import BeautifulSoup
 import re
 from sklearn.feature_extraction.text import CountVectorizer
-from nltk.stem import WordNetLemmatizer
 import nltk
 nltk.download('wordnet')
 nltk.download('punkt')
+from nltk.stem import WordNetLemmatizer
   
 
 import flask
