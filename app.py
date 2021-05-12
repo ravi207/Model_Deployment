@@ -14,8 +14,9 @@ from nltk.stem import WordNetLemmatizer
 
 import flask
 app = Flask(__name__)
-
-
+clf = joblib.load('quora_model.pkl')
+count_vect = joblib.load('quora_vectorizer.pkl')
+    
 ###################################################
 def pre_processing(text):
     lemmatizer = WordNetLemmatizer()
@@ -27,7 +28,7 @@ def pre_processing(text):
 ###################################################
 
 
-@app.route('/index')
+@app.route('/')
 def index():
     return flask.render_template('index.html')
 
@@ -50,7 +51,7 @@ def predict():
 
 
 if __name__ == '__main__':
-    clf = joblib.load('quora_model.pkl')
-    count_vect = joblib.load('quora_vectorizer.pkl')
+    #clf = joblib.load('quora_model.pkl')
+    #count_vect = joblib.load('quora_vectorizer.pkl')
     app.run(debug=True)
     #app.run(host='localhost', port=8081)
