@@ -3,7 +3,8 @@ import numpy as np
 from sklearn.externals import joblib
 import pandas as pd
 from sklearn import linear_model
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
+import joblib
 import re
 from sklearn.feature_extraction.text import CountVectorizer
 import nltk
