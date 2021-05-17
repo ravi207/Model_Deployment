@@ -51,7 +51,7 @@ def predict():
     # filtering out non questions 
     if not re.search("(?i)(what|which|who|where|why|when|how|whose|\?)",to_predict_list['review_text']):
         prediction = "Negative"
-        prob = float(0.0)
+        prob = prob*0
         
    
     
