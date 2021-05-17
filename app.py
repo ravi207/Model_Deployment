@@ -37,6 +37,7 @@ def index():
 def predict():
     to_predict_list = request.form.to_dict()
     review_text = pre_processing(to_predict_list['review_text'])
+    
     pred = clf.predict(count_vect.transform([review_text]))
     prob = clf.predict_proba(count_vect.transform([review_text]))
     #pr =  1
@@ -47,6 +48,13 @@ def predict():
         prediction = "Negative"
         #pr = prob[0][0]
 
+    # filtering out non questions 
+    if not re.search("(?i)(what|which|who|where|why|when|how|whose|\?)",to_predict_list['review_text']):
+        prediction = "Negative"
+        prob = 0
+        
+   
+    
     return flask.render_template('predict.html', prediction = prediction, prob =np.round(prob[0][0],3)*100)
 
 
